@@ -84,10 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const mensaje = `Hola, me interesa cotizar un evento desde la *${campaignTitle}*:\n\n🎵 *Cotización de Evento Musical*\n👤 *Nombre:* ${data.nombre}\n📞 *Teléfono:* ${phoneDigits}\n🎉 *Tipo de evento:* ${data.evento}\n📅 *Fecha:* ${formattedDate}\n💬 *Comentarios:* ${data.comentarios || 'Ninguno'}\n\n¡Espero su respuesta!`;
 
-                // Report conversion
+                // Report conversion to Google Ads
                 if (typeof gtag_report_conversion === 'function') {
-                    const eventLabel = `form_submit_${campaignName}`;
-                    gtag_report_conversion(eventLabel, 5.0);
+                    gtag_report_conversion();
                 }
 
                 // Push GTM event manualmente también
