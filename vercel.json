@@ -64,6 +64,10 @@
   ],
   "rewrites": [
     {
+      "source": "/api/send-form",
+      "destination": "/api/send-form.js"
+    },
+    {
       "source": "/bodas",
       "destination": "/bodas.html"
     },

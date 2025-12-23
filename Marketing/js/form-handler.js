@@ -53,12 +53,52 @@ document.addEventListener('DOMContentLoaded', function () {
                     day: 'numeric'
                 });
 
+                // Enviar datos a la API para email
+                try {
+                    const apiResponse = await fetch('/api/send-form', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            nombre: data.nombre,
+                            telefono: phoneDigits,
+                            evento: data.evento,
+                            fecha: data.fecha,
+                            comentarios: data.comentarios || '',
+                            campaignTitle: campaignTitle,
+                            campaignName: campaignName
+                        })
+                    });
+
+                    const apiResult = await apiResponse.json();
+                    
+                    // Push GTM event si la API lo devuelve
+                    if (apiResult.gtmEvent && window.dataLayer) {
+                        window.dataLayer.push(apiResult.gtmEvent);
+                    }
+                } catch (apiError) {
+                    console.error('Error al enviar email:', apiError);
+                    // Continuar aunque falle el email
+                }
+
                 const mensaje = `Hola, me interesa cotizar un evento desde la *${campaignTitle}*:\n\n🎵 *Cotización de Evento Musical*\n👤 *Nombre:* ${data.nombre}\n📞 *Teléfono:* ${phoneDigits}\n🎉 *Tipo de evento:* ${data.evento}\n📅 *Fecha:* ${formattedDate}\n💬 *Comentarios:* ${data.comentarios || 'Ninguno'}\n\n¡Espero su respuesta!`;
 
                 // Report conversion
                 if (typeof gtag_report_conversion === 'function') {
                     const eventLabel = `form_submit_${campaignName}`;
                     gtag_report_conversion(eventLabel, 5.0);
+                }
+
+                // Push GTM event manualmente también
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        event: 'form_submission',
+                        formName: campaignName,
+                        eventType: data.evento,
+                        eventDate: data.fecha,
+                        formValue: 5.0
+                    });
                 }
 
                 const whatsappUrl = `https://wa.me/525535412631?text=${encodeURIComponent(mensaje)}`;
