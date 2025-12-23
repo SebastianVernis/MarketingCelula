@@ -1,0 +1,26 @@
+{
+  "name": "Grupo Musical La Célula",
+  "short_name": "La Célula",
+  "description": "Grupo musical versátil profesional en CDMX. Música en vivo para bodas, XV años y eventos privados.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/logo/logo-favicon-grupo-musical-la-celula.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/logo/logo-favicon-grupo-musical-la-celula.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["music", "entertainment"],
+  "lang": "es-MX"
+}

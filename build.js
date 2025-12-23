@@ -58,6 +58,8 @@ staticFiles.forEach(file => {
     if (existsSync(src)) {
         cpSync(src, dest);
         console.log(`  ✓ ${file}`);
+    } else {
+        console.log(`  ⚠ ${file} not found, skipping...`);
     }
 });
 
