@@ -1,0 +1,80 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "Marketing",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "env": {
+    "NODE_VERSION": "18"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/bodas.html",
+      "destination": "/bodas",
+      "permanent": true
+    },
+    {
+      "source": "/privada.html",
+      "destination": "/privada",
+      "permanent": true
+    },
+    {
+      "source": "/xv.html",
+      "destination": "/xv",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/bodas",
+      "destination": "/bodas.html"
+    },
+    {
+      "source": "/privada",
+      "destination": "/privada.html"
+    },
+    {
+      "source": "/xv",
+      "destination": "/xv.html"
+    }
+  ]
+}
+
