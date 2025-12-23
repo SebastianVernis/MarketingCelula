@@ -4,6 +4,25 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-5783XFN4');
+
+// Google Tag (gtag.js) - AW-943484255
+(function() {
+    // Load gtag.js script
+    var gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-943484255';
+    document.head.appendChild(gtagScript);
+
+    // Initialize dataLayer and gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-943484255');
+    
+    // Make gtag available globally
+    window.gtag = gtag;
+})();
+
 /**
  * Common functionality for Marketing campaign pages
  */
