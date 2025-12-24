@@ -84,21 +84,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const mensaje = `Hola, me interesa cotizar un evento desde la *${campaignTitle}*:\n\n🎵 *Cotización de Evento Musical*\n👤 *Nombre:* ${data.nombre}\n📞 *Teléfono:* ${phoneDigits}\n🎉 *Tipo de evento:* ${data.evento}\n📅 *Fecha:* ${formattedDate}\n💬 *Comentarios:* ${data.comentarios || 'Ninguno'}\n\n¡Espero su respuesta!`;
 
-                // Report conversion to Google Ads
-                if (typeof gtag_report_conversion === 'function') {
-                    gtag_report_conversion();
-                }
-
-                // Push GTM event manualmente también
-                if (window.dataLayer) {
-                    window.dataLayer.push({
-                        event: 'form_submission',
-                        formName: campaignName,
-                        eventType: data.evento,
-                        eventDate: data.fecha,
-                        formValue: 5.0
-                    });
-                }
+                // Push event to GTM dataLayer - GTM handles all tracking
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'form_submission',
+                    formName: campaignName,
+                    eventType: data.evento,
+                    eventDate: data.fecha,
+                    formValue: 5.0
+                });
 
                 const whatsappUrl = `https://wa.me/525535412631?text=${encodeURIComponent(mensaje)}`;
                 window.open(whatsappUrl, '_blank');

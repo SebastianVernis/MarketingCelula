@@ -2,33 +2,13 @@
 <html lang="es">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5MXH55ZG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'GT-5MXH55ZG');
-    </script>
-    
-    <!-- Event snippet for Enviar formulario de clientes potenciales conversion page -->
-    <script>
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                    window.location = url;
-                }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-943484255/pDcJCNeThNYbEN_a8cED',
-                'value': 1.0,
-                'currency': 'MXN',
-                'event_callback': callback
-            });
-            return false;
-        }
-    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5783XFN4');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,10 +17,10 @@
         content="La mejor música para tu boda, garantizamos pista llena y sonido profesional de alta fidelidad. Aprovecha 10% de descuento si tu evento es en enero.">
     <meta name="keywords"
         content="música para bodas, grupo musical para bodas, grupo versátil bodas CDMX, música en vivo boda, grupo musical versátil para bodas CDMX">
-    <link rel="canonical" href="https://www.grupomusicalcelula.com/boda.html">
+    <link rel="canonical" href="https://marketing.grupomusicalcelula.com/bodas">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.grupomusicalcelula.com/boda.html">
+    <meta property="og:url" content="https://marketing.grupomusicalcelula.com/bodas">
     <meta property="og:title" content="Música en Vivo para Bodas en CDMX | Grupo La Célula">
     <meta property="og:description"
         content="Haz de tu boda una experiencia inolvidable con música en vivo, repertorio personalizado y ambiente perfecto para tus invitados.">
@@ -48,7 +28,7 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.grupomusicalcelula.com/boda.html">
+    <meta property="twitter:url" content="https://marketing.grupomusicalcelula.com/bodas">
     <meta property="twitter:title" content="Música en Vivo para Bodas en CDMX | Grupo La Célula">
     <meta property="twitter:description"
         content="Grupo musical profesional para bodas elegantes en CDMX. Convierte tu día especial en una celebración inolvidable.">
@@ -101,6 +81,11 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5783XFN4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <!-- Header y Navegación -->
     <header class="site-header" id="SITE_HEADER">
         <nav class="nav-container">
@@ -129,8 +114,7 @@
         <!-- Hero Section con CTA y animación de flecha -->
         <section class="marketing-hero-section" id="hero">
             <div class="marketing-hero-content">
-                <div class="discount-badge"><a href="#contacto"
-                        onclick="return gtag_report_conversion('badge_descuento_bodas', 0.5, '#contacto')">
+                <div class="discount-badge"><a href="#contacto">
                         <p> ¿Se casan en enero?</p>
                         <p>🎉 Celebren con un 10% de descuento 🎉</p>
                     </a></div>
@@ -138,8 +122,7 @@
                 <p class="marketing-hero-subtitle">Sabemos que cada detalle cuenta, por eso ofrecemos un repertorio
                     versátil que se adapta a todos tus invitados, garantizando animación constante y un sonido impecable
                     para que cada momento sea perfecto.</p>
-                <a href="#contacto" class="hero-cta-button"
-                    onclick="return gtag_report_conversion('#contacto')">Consultar disponibilidad y paquetes</a>
+                <a href="#contacto" class="hero-cta-button">Consultar disponibilidad y paquetes</a>
             </div>
             <div class="scroll-arrow" id="scrollArrow">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -170,8 +153,7 @@
                         class="event-image" loading="lazy">
                 </div>
             </div>
-            <a href="#contacto" class="hero-cta-button" onclick="return gtag_report_conversion('#contacto')">Cotiza tu
-                boda ahora</a>
+            <a href="#contacto" class="hero-cta-button">Cotiza tu boda ahora</a>
         </section>
 
         <!-- Sección Formulario de Contacto (4to y 5to sexto) -->

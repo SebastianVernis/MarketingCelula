@@ -40,7 +40,7 @@ export default async function handler(req, res) {
         // Preparar datos para el email
         const emailData = {
             to: process.env.EMAIL_TO || 'contacto@grupomusicalcelula.com',
-            from: process.env.EMAIL_FROM || 'noreply@grupomusicalcelula.com',
+            from: 'onboarding@resend.dev', // Email verificado de Resend para pruebas
             subject: `Nueva Solicitud: ${evento} - ${nombre}`,
             html: `
                 <!DOCTYPE html>
