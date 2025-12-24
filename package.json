@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vercel dev",
-    "build": "node build.js",
+    "build": "node scripts/build.js",
     "deploy": "vercel --prod",
-    "lint": "npx eslint --config config/eslint.config.js src/js/**/*.js --fix || echo 'ESLint completed with warnings'"
+    "lint": "npx eslint --config config/eslint.config.js src/js/**/*.js --fix || echo 'ESLint completed with warnings'",
+    "test:api": "node tests/test-api.js",
+    "test:email": "node tests/test-email-direct.js",
+    "test:final": "node tests/test-final.js",
+    "test:new-key": "node tests/test-new-key.js",
+    "test:resend": "node tests/test-resend-simple.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
