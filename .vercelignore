@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Crush (analytics)
+.crush/
+
+# Build artifacts (not needed since we build on Vercel)
+dist/
+
+# Local env files
+.env.local
+.env.*.local
